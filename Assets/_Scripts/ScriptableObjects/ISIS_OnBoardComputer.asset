@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f27c02b65192f466f88e84be92218bab, type: 3}
+  m_Name: ISIS_OnBoardComputer
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 76ab0287282b7704986a6151fb17a4b3, type: 3}
+  timeToInstantiate: 13
+  prefab: {fileID: 8315032479949017844, guid: 8593947e619cc534cb1963fac7cb31c6, type: 3}
+  instanceID: 0
+  description: The ISIS On Board computer (IOBC) is a flight-proven, high-performance
+    processing unit based around an ARM9 processor with a speed of 400 MHz, making
+    it one of the most capable on-board computers for CubeSats. Its pluggable daughter
+    board offers additional flexibility and customizability by providing a wide range
+    of extra interfaces for payloads, sensors or actuators in a compact form factor.

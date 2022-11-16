@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f27c02b65192f466f88e84be92218bab, type: 3}
+  m_Name: UHF_VHF_Duplex_Transceiver
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: aca60d4571f4167438cb9b3ab4308bf1, type: 3}
+  timeToInstantiate: 15
+  prefab: {fileID: 4374718890239703301, guid: 827c9ab8a874b4e41a3437389e15d00e, type: 3}
+  instanceID: 0
+  description: The VHF uplink/UHF downlink transceiver is a full duplex communication
+    system for CubeSat TT&C applications. The radio can operate in commercial and
+    amateur bands of the VHF/UHF frequency spectrum. It is low power, low mass, and
+    highly configurable, offering the flexibility of changing data rates and frequencies
+    in flight. This radio is tailored for CubeSat missions and cross-compatible with
+    other subsystems such as onboard computers and antenna systems. Flight proven
+    since 2016.

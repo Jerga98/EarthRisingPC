@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f27c02b65192f466f88e84be92218bab, type: 3}
+  m_Name: UHF_Radio_SAT2RF1-1D
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: d79fc8bf4099c7946bdb172605505eba, type: 3}
+  timeToInstantiate: 11
+  prefab: {fileID: 9126639196576611682, guid: ca0a98aeaf983bc4285d4211aa5b034f, type: 3}
+  instanceID: 0
+  description: "UHF Digital SatCOM utilizes a half-duplex architecture with a high-performance
+    low power consumption transceiver which is controlled by a dedicated Cortex \u2013
+    M4 MCU. The radio uses the ultra-high frequency band (UHF) that is programmable
+    in 430 to 440 MHz range. The receiver has an excellent sensitivity of -120 dBm
+    at 9600 baud rate and the transmitter supports high throughput data communication
+    in narrowband channels with GDSK, FSK (including G3RUH), MSK and OOK modulations."

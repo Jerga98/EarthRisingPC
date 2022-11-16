@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Floor
+  - solderingIron
+  - Battery
+  - Battery_slot01
+  - Battery_slot02
+  - PowerSupply
+  - Payload_Controller
+  - IC002
+  - IC001
+  - IC003
+  - IC004
+  - IC005
+  - IC006
+  - CubeSat
+  - CubeSatSide
+  - EPC IC004
+  - EPC IC005
+  - Electric Power Subsystem
+  - Cubesat Space Processor
+  - QubeAIS Receiver
+  - C3D CubeSat Camera
+  - CubeSat Antenna System
+  - ICEPS Spacecraft System Core
+  - iMTQ Magnetorquer
+  - ISIS_OnBoardComputer
+  - Linear EPS Module
+  - NANOobc-2_OBC
+  - NanoPower_BP4_PSU
+  - S-Band Antenna
+  - S-Band High Data Rate Transmitter 1
+  - Satcom FM repeater
+  - Small Satellite On-board Computer
+  - UHF Antenna System_1x1U
+  - UHF Antenna System_1x2U
+  - UHF Radio SAT2RF1-1D
+  - UHF_VHF_Duplex_Transceiver
+  - CSP_IC001
+  - ICEPS_CPU
+  - ICEPS_IC001
+  - ICEPS_IC004
+  - iMTQ_IC001
+  - ISIS_OBC_IC001
+  - ISIS_OBC_IC002
+  - NANObc-2_ICU1
+  - NANObc-2_ICU2
+  - NANObc-2_ICU3
+  - Regulator_sensorT2
+  - BP4_Battery01
+  - P31u_Battery01
+  - QubeAIS Receiver_CPU
+  - S-Band_CPU
+  - FM repeater_IC01
+  - FM repeater_IC02
+  - Small Satellite OBC_CPU
+  - Small Satellite OBC_IC001
+  - UHF Radio_IC004
+  - UHF_VHF_IC005
+  - UHF_VHF_IC006
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Floor
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - HandPlayer
+  - Hand
+  - Grabbable
+  - Grabbing
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

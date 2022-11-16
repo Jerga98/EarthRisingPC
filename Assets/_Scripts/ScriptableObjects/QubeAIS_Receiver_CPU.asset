@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f27c02b65192f466f88e84be92218bab, type: 3}
+  m_Name: QubeAIS_Receiver_CPU
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: a9314b68c1d72465293d6717d489cc07, type: 3}
+  timeToInstantiate: 7
+  prefab: {fileID: 6792920392929210262, guid: adbbee903f394bf4d8dabcdfe755b823, type: 3}
+  instanceID: 0
+  description: Qube AIS Reciever CPU chip

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f27c02b65192f466f88e84be92218bab, type: 3}
+  m_Name: S-Band_High_Data_Rate_Transmitter
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 1d254cb9340bbed4d86f248e5bab44f0, type: 3}
+  timeToInstantiate: 15
+  prefab: {fileID: 1810139391143706834, guid: e0f4d72d9a180d246ab41d11e60b7337, type: 3}
+  instanceID: 0
+  description: The S-Band High Data Rate Transmitter is a CubeSat compatible Transmitter
+    designed to meet the needs of high data-rate downlinks of up to 4.3 Mbps (usable
+    information bit-rate at CCSDS transfer frame level). The transmitter can be used
+    for both TT&C or PDT downlinks. The S-band transmitter is flexible, implementing
+    CCSDS as data link layer protocol and allowing in-flight configuration of data-rate,
+    modulation scheme, frequency, and RF output power.

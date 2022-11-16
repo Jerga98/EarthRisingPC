@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f27c02b65192f466f88e84be92218bab, type: 3}
+  m_Name: CubeSat
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 8dfcbae824ce144808a380a3004944be, type: 3}
+  timeToInstantiate: 15
+  prefab: {fileID: 846945895533489069, guid: f61c5161ee92c4fa49ae133e06606cda, type: 3}
+  instanceID: 0
+  description: A CubeSat is a class of miniaturized satellite based around a form
+    factor consisting of 10 cm cubes. CubeSats have a mass of no more than 2 kg per
+    unit, and often use commercial off-the-shelf (COTS) components for their electronics
+    and structure. CubeSats are put into orbit by deployers on the International
+    Space Station, or launched as secondary payloads on a launch vehicle.

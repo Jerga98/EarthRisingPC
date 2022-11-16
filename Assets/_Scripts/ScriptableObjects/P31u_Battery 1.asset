@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f27c02b65192f466f88e84be92218bab, type: 3}
+  m_Name: P31u_Battery 1
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: d95eca4b531074df8919275dbf759b96, type: 3}
+  image: {fileID: 0}
+  timeToInstantiate: 0
+  prefab: {fileID: 2845450147984588772, guid: 6d4234c37a6cdcd49aae34dbf3e2b6c6, type: 3}

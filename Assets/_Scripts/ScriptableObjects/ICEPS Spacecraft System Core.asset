@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f27c02b65192f466f88e84be92218bab, type: 3}
+  m_Name: ICEPS Spacecraft System Core
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 4662f9d39e454d54f8e882dce3be9512, type: 3}
+  timeToInstantiate: 12
+  prefab: {fileID: 4440480612846238994, guid: 594d3e171a9d12f489566dc83e5f70f8, type: 3}
+  instanceID: 0
+  description: ICEPS is designed to be the central operational heart of CubeSats,
+    enabling modular use of higher performance hardware and features. ICEPS compresses
+    the functions of many cards into a single, 25mm-thick system, using modularity
+    for fully customizable hardware that can range from being simply an EPS or including
+    a range of features.

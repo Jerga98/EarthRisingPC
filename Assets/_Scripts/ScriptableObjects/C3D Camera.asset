@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f27c02b65192f466f88e84be92218bab, type: 3}
+  m_Name: C3D Camera
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: d19bd98b4e3a4284ca57c0e0d2def3a2, type: 3}
+  timeToInstantiate: 7
+  prefab: {fileID: 6340412476140574761, guid: 8c4bb8efb62fe364caf9ffd78a79df77, type: 3}
+  instanceID: 0
+  description: "C3D is a CubeSat camera system (imager board and optical subassembly)
+    with TRL 9 status and proven space flight heritage. Originally developed in partnership
+    with The Open University, C3D has successfully flown and transmitted images on
+    CubeSat missions such as the UK Space Agency\u2019s UKube-1 and AlSat Nano."
