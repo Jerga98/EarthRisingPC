@@ -40,22 +40,22 @@ public class HoldItem : MonoBehaviour
         cubeSatComponent.transform.SetParent(guide);
         scale_Normal = cubeSatComponent.transform.localScale;
 
-        if (cubeSatComponent.name == "Komu")
-        {
-            krugUI.color = Color.green;
-        }
-        else if (cubeSatComponent.name == "Bio")
-        {
-            krugUI.color = new Color(0.47f, 0.274f, 0.211f);
-        }
-        else if (cubeSatComponent.name == "Plastika")
-        {
-            krugUI.color = Color.yellow;
-        }
-        else if (cubeSatComponent.name == "Papir")
-        {
-            krugUI.color = Color.blue;
-        }
+        //if (cubeSatComponent.name == "Komu")
+        //{
+        //    krugUI.color = Color.green;
+        //}
+        //else if (cubeSatComponent.name == "Bio")
+        //{
+        //    krugUI.color = new Color(0.47f, 0.274f, 0.211f);
+        //}
+        //else if (cubeSatComponent.name == "Plastika")
+        //{
+        //    krugUI.color = Color.yellow;
+        //}
+        //else if (cubeSatComponent.name == "Papir")
+        //{
+        //    krugUI.color = Color.blue;
+        //}
 
         cubeSatComponent.GetComponent<Rigidbody>().useGravity = false;
 
@@ -121,19 +121,21 @@ public class HoldItem : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if (!col.gameObject.CompareTag("Untagged") && !col.gameObject.CompareTag("Player") && canPickup == false)
+        if (!col.gameObject.CompareTag("Untagged") && !col.gameObject.CompareTag("GameController") && canPickup == false)
         {
+            Debug.Log("CAN PICKUP: " + col.gameObject.name);
             canPickup = true;
+            cubeSatComponent = col.gameObject;
             Outline outline = col.gameObject.GetComponent<Outline>();
             outline.enabled = true;
 
-            cubeSatComponent = col.gameObject;
+            
         }
     }
 
     void OnTriggerExit(Collider col)
     {
-        if (!col.gameObject.CompareTag("Untagged") && !col.gameObject.CompareTag("Player"))
+        if (!col.gameObject.CompareTag("Untagged") && !col.gameObject.CompareTag("GameController"))
         {
             if (canHold)
             {

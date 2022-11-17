@@ -120,7 +120,7 @@ public class FirstPersonController : MonoBehaviour
     private void HandleMovementInput()
     {
         currentInput = new Vector2((isCrouching ? crouchSpeed : walkSpeed) * Input.GetAxis("Vertical"), (isCrouching ? crouchSpeed : walkSpeed) * Input.GetAxis("Horizontal"));
-        Debug.Log(currentInput + " is running");
+        //Debug.Log(currentInput + " is running");
 
         float moveDirectionY = moveDirection.y;
         moveDirection = (transform.TransformDirection(Vector3.forward) * currentInput.x) + (transform.TransformDirection(Vector3.right) * currentInput.y);
