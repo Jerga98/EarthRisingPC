@@ -5,18 +5,26 @@ using UnityEngine;
 public class TablePC : MonoBehaviour
 {
     public GameObject tabletPanel;
-    public GameObject Player;
+    FirstPersonController firstPerson;
+
+    private void Awake()
+    {
+        firstPerson = FindObjectOfType<FirstPersonController>();
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.T)){
             if (!tabletPanel.activeInHierarchy)
             {
                 tabletPanel.SetActive(true);
-                //Player.transform.rotation.
+                firstPerson.CanMove = false;
+                Cursor.visible = true;
             }
             else
             {
                 tabletPanel.SetActive(false);
+                firstPerson.CanMove = true;
+                Cursor.visible = false;
             }
         }
     }

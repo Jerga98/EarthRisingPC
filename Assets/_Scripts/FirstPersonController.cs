@@ -5,17 +5,20 @@ using UnityEngine;
 
 public class FirstPersonController : MonoBehaviour
 {
-    public bool CanMove { get; private set; } = true;
+    public bool CanMove { get; set; } = true;
     private bool ShouldCrouch => Input.GetKeyDown(crouchKey) && !duringCrouchAnimation && characterController.isGrounded;
+    private bool ShouldJump => Input.GetKeyDown(jumpKey) && characterController.isGrounded;
 
     [Header("Functional Options")]
     [SerializeField] private bool canCrouch = true;
     //[SerializeField] private bool canUseHeadbob = true;
+    [SerializeField] private bool canJump = true;
     [SerializeField] private bool canInteract = true;
     [SerializeField] private bool useFootsteps = true;
 
     [Header("Controls")]
     [SerializeField] private KeyCode crouchKey = KeyCode.LeftControl;
+    [SerializeField] private KeyCode jumpKey = KeyCode.Space;
     [SerializeField] private KeyCode interactKey = KeyCode.F;
 
     [Header("Movement Parameters")]
@@ -29,7 +32,9 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField, Range(1, 180)] private float lowerLookLimit = 80f;
 
     [Header("Jumping Parameters")]
+    [SerializeField] private float jumpForce = 8.0f;
     [SerializeField] private float gravity = 30.0f;
+    [SerializeField] private float jumpForceBoost = 1.5f;
 
     [Header("Crouch Parameters")]
     [SerializeField] private float crouchHeight = 0.5f;
@@ -66,6 +71,7 @@ public class FirstPersonController : MonoBehaviour
     //private Interactable currentInteractable;
     public bool canHold = true;
     public bool canPickup = false;
+    public GameObject tabletPanel;
 
     private Camera playerCamera;
     private CharacterController characterController;
@@ -104,6 +110,9 @@ public class FirstPersonController : MonoBehaviour
             if (canCrouch)
                 HandleCrouch();
 
+            if (canJump)
+                HandleJump();
+
             //if (useFootsteps)
             //    HandleFootsteps();
 
@@ -141,6 +150,15 @@ public class FirstPersonController : MonoBehaviour
             StartCoroutine(CrouchStand());
     }
 
+    private void HandleJump()
+    {
+        if (ShouldJump && isCrouching)
+        {
+            moveDirection.y = jumpForce * jumpForceBoost;
+        }
+        else if (ShouldJump)
+            moveDirection.y = jumpForce;
+    }
 
 
     /*private void HandleHeadbob()
@@ -249,4 +267,5 @@ public class FirstPersonController : MonoBehaviour
 
         duringCrouchAnimation = false;
     }
+
 }

@@ -8,6 +8,13 @@ public class PausePC : MonoBehaviour
 
     public GameObject pausePanel;
 
+    FirstPersonController firstPerson;
+
+    private void Awake()
+    {
+        firstPerson = FindObjectOfType<FirstPersonController>();
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -15,10 +22,13 @@ public class PausePC : MonoBehaviour
             if (GameIsPaused)
             {
                 Resume();
+                firstPerson.CanMove = true;
+                Cursor.visible = false;
             }
             else
             {
                 Pause();
+                firstPerson.CanMove = false;
             }
         }
     }
@@ -26,14 +36,24 @@ public class PausePC : MonoBehaviour
     public void Resume()
     {
         pausePanel.SetActive(false);
-        Time.timeScale = 1f;
         GameIsPaused = false;
+        Time.timeScale = 1f;
     }
     public void Pause()
     {
         pausePanel.SetActive(true);
-        Time.timeScale = 0f;
         GameIsPaused = true;
+        Time.timeScale = 0f;
+    }
+
+    public void Options()
+    {
+        //open options panel...
+    }
+
+    public void BackToMenu()
+    {
+        //Load menu scene...
     }
 
     public void QuitGame()
