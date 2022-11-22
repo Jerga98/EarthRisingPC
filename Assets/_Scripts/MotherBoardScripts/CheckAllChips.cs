@@ -17,21 +17,25 @@ public class CheckAllChips : MonoBehaviour
 
     public void CheckAllComponents()
     {
-        SolderChecker = FindObjectOfType<SolderChecker>();
-        Debug.Log("poèinje CheckAllChips");
-        SolderChecker.IsAllSoderComplete();
-        Debug.Log("CheckAllChips radi");
+        //SolderChecker = FindObjectOfType<SolderChecker>();
+        //Debug.Log("poèinje CheckAllChips");
+        //SolderChecker.IsAllSoderComplete();
+        //Debug.Log("CheckAllChips radi");
 
         for (int i = 0; i < _solderCheckers.Length; i++)
         {
-            if (!_solderCheckers[i].canLaunch)
+            _solderCheckers[i].IsAllSoderComplete();
+            if (_solderCheckers[i].canLaunch == false)
             {
+                Debug.Log(_solderCheckers[i].canLaunch);
                 n += 1;
             }
+
         }
         if (n == 0)
         {
             canLaunch = true;
+            Debug.Log("ChAllCh n usporedba je: " + canLaunch);
         }
         Debug.Log("Chip n: " + n);
     }

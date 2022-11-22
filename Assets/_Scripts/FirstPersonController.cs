@@ -142,6 +142,9 @@ public class FirstPersonController : MonoBehaviour
         rotationX = Mathf.Clamp(rotationX, -upperLookLimit, lowerLookLimit);
         playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
         transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeedX, 0);
+
+        //playerCamera.transform.localRotation = Quaternion.Euler(Input.GetAxis("Mouse Y") * lookSpeedX, Input.GetAxis("Mouse X") * lookSpeedX, 0);
+        //transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeedX, 0);
     }
 
     private void HandleCrouch()

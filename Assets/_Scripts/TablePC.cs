@@ -19,12 +19,14 @@ public class TablePC : MonoBehaviour
                 tabletPanel.SetActive(true);
                 firstPerson.CanMove = false;
                 Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
             }
             else
             {
                 tabletPanel.SetActive(false);
                 firstPerson.CanMove = true;
                 Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
             }
         }
     }

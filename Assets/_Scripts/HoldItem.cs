@@ -93,9 +93,10 @@ public class HoldItem : MonoBehaviour
 
         //Aktiviraj gravity
         cubeSatComponent.GetComponent<Rigidbody>().useGravity = true;
+        cubeSatComponent.GetComponent<Rigidbody>().isKinematic = false;
         cubeSatComponent.gameObject.transform.localScale = scale_Normal;
 
-        krugUI.color = Color.black;
+        //krugUI.color = Color.black;
 
         //aktiviraj coll
         if (cubeSatComponent.GetComponent<MeshCollider>() != null)
@@ -121,7 +122,7 @@ public class HoldItem : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if (!col.gameObject.CompareTag("Untagged") && !col.gameObject.CompareTag("GameController") && canPickup == false)
+        if (!col.gameObject.CompareTag("Untagged") && !col.gameObject.CompareTag("GameController") && !col.gameObject.CompareTag("MainCamera") && canPickup == false)
         {
             Debug.Log("CAN PICKUP: " + col.gameObject.name);
             canPickup = true;
@@ -135,7 +136,7 @@ public class HoldItem : MonoBehaviour
 
     void OnTriggerExit(Collider col)
     {
-        if (!col.gameObject.CompareTag("Untagged") && !col.gameObject.CompareTag("GameController"))
+        if (!col.gameObject.CompareTag("Untagged") && !col.gameObject.CompareTag("GameController") && !col.gameObject.CompareTag("GameController"))
         {
             if (canHold)
             {

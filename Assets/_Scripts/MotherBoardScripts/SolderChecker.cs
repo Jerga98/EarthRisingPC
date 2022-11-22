@@ -29,6 +29,7 @@ public class SolderChecker : MonoBehaviour
         if (n == 0)
         {
             canLaunch = true;
+            Debug.Log("SolderCh n usporedba je: " + canLaunch);
         }
         Debug.Log("Solder n: " + n);
     }

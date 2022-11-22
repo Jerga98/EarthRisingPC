@@ -22,13 +22,11 @@ public class PausePC : MonoBehaviour
             if (GameIsPaused)
             {
                 Resume();
-                firstPerson.CanMove = true;
-                Cursor.visible = false;
             }
             else
             {
                 Pause();
-                firstPerson.CanMove = false;
+
             }
         }
     }
@@ -38,12 +36,18 @@ public class PausePC : MonoBehaviour
         pausePanel.SetActive(false);
         GameIsPaused = false;
         Time.timeScale = 1f;
+        firstPerson.CanMove = true;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
     public void Pause()
     {
         pausePanel.SetActive(true);
         GameIsPaused = true;
         Time.timeScale = 0f;
+        firstPerson.CanMove = false;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void Options()

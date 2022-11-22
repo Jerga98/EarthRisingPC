@@ -12,7 +12,8 @@ public class ConveyorBelt : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         // GameObject parente = other.gameObject.GetComponentInParent<Transform>().position;
-        if (!other.gameObject.CompareTag("GameController")){
+        if (!other.gameObject.CompareTag("GameController") && !other.gameObject.CompareTag("MainCamera"))
+        {
             other.transform.position = Vector3.MoveTowards(other.transform.position, endPoint.position, speed * Time.deltaTime);
             other.gameObject.GetComponentInParent<Transform>().position = Vector3.MoveTowards(other.transform.position, endPoint.position, speed * Time.deltaTime);
         }
