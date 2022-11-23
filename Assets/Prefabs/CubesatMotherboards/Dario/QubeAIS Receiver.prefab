@@ -566,7 +566,7 @@ PrefabInstance:
     - target: {fileID: -8079085611602127746, guid: a7b430d436cae9a43bad98523c6645c0,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a7b430d436cae9a43bad98523c6645c0,
         type: 3}
@@ -662,7 +662,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _solderCheckers:
   - {fileID: 4974697232744886073}
-  SolderChecker: {fileID: 0}
   canLaunch: 0
 --- !u!114 &7039840097366582698
 MonoBehaviour:

@@ -83,7 +83,7 @@ public class TabletMechanics : MonoBehaviour
             //itemDescription = _printableItemsSos[i].description;
             tempToggle.graphic.GetComponent<Image>().sprite = _printableItemsSos[i].sprite;
             _printableItemsSos[i].objectName = _printableItemsSos[i].name;
-            tempToggle.GetComponentInChildren<Text>().text = _printableItemsSos[i].objectName;
+            tempToggle.GetComponentInChildren<TextMeshProUGUI>().text = _printableItemsSos[i].objectName;
             //itemDescription = _printableItemsSos[i].description;
             tempToggle.onValueChanged.AddListener(delegate { ToggleValueChanged(); });
             tempToggle.group = _toggleGroup;

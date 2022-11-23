@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PausePC : MonoBehaviour
 {
@@ -57,7 +58,7 @@ public class PausePC : MonoBehaviour
 
     public void BackToMenu()
     {
-        //Load menu scene...
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void QuitGame()

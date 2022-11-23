@@ -434,12 +434,12 @@ PrefabInstance:
     - target: {fileID: -7025177718718509632, guid: 696a92c3d63a26d4185573fcf92cffc2,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -178230835822091298, guid: 696a92c3d63a26d4185573fcf92cffc2,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 696a92c3d63a26d4185573fcf92cffc2,
         type: 3}
@@ -454,7 +454,7 @@ PrefabInstance:
     - target: {fileID: 6722437339946862439, guid: 696a92c3d63a26d4185573fcf92cffc2,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 696a92c3d63a26d4185573fcf92cffc2, type: 3}
@@ -556,7 +556,6 @@ MonoBehaviour:
   - {fileID: 4449830952382417987}
   - {fileID: 8289330310519923475}
   - {fileID: 1931893404089224680}
-  SolderChecker: {fileID: 0}
   canLaunch: 0
 --- !u!4 &5276397100706731327 stripped
 Transform:

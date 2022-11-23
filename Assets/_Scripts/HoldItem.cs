@@ -37,8 +37,9 @@ public class HoldItem : MonoBehaviour
         if (!cubeSatComponent)
             return;
 
-        cubeSatComponent.transform.SetParent(guide);
         scale_Normal = cubeSatComponent.transform.localScale;
+
+        cubeSatComponent.transform.SetParent(guide);
 
         //if (cubeSatComponent.name == "Komu")
         //{
@@ -94,14 +95,13 @@ public class HoldItem : MonoBehaviour
         //Aktiviraj gravity
         cubeSatComponent.GetComponent<Rigidbody>().useGravity = true;
         cubeSatComponent.GetComponent<Rigidbody>().isKinematic = false;
-        cubeSatComponent.gameObject.transform.localScale = scale_Normal;
 
         //krugUI.color = Color.black;
 
         //aktiviraj coll
         if (cubeSatComponent.GetComponent<MeshCollider>() != null)
         {
-            guide.transform.localScale = new Vector3(1, 1, 1);
+            //guide.transform.localScale = new Vector3(1, 1, 1);
             componentMeshColl = cubeSatComponent.GetComponent<MeshCollider>();
             componentMeshColl.enabled = true;
         }
@@ -113,9 +113,11 @@ public class HoldItem : MonoBehaviour
 
         //Primjeni velocity kad se baca
         guide.GetChild(0).gameObject.GetComponent<Rigidbody>().velocity = transform.forward * speed;
-
+        //cubeSatComponent.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
         //Uperent smece
         guide.GetChild(0).parent = null;
+        cubeSatComponent.gameObject.transform.localScale = scale_Normal;
+
         canHold = true;
         cubeSatComponent = null;
     }
@@ -127,8 +129,8 @@ public class HoldItem : MonoBehaviour
             Debug.Log("CAN PICKUP: " + col.gameObject.name);
             canPickup = true;
             cubeSatComponent = col.gameObject;
-            Outline outline = col.gameObject.GetComponent<Outline>();
-            outline.enabled = true;
+            //Outline outline = col.gameObject.GetComponent<Outline>();
+            //outline.enabled = true;
 
             
         }
@@ -141,8 +143,8 @@ public class HoldItem : MonoBehaviour
             if (canHold)
             {
                 canPickup = false;
-                Outline outline = col.gameObject.GetComponent<Outline>();
-                outline.enabled = false;
+                //Outline outline = col.gameObject.GetComponent<Outline>();
+                //outline.enabled = false;
             }
         }
     }

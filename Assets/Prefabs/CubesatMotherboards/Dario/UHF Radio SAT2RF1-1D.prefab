@@ -414,7 +414,7 @@ PrefabInstance:
     - target: {fileID: 6649864622832356276, guid: 88ec923ac11ec564495e1ddfd1d952f7,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88ec923ac11ec564495e1ddfd1d952f7, type: 3}
@@ -498,7 +498,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _solderCheckers:
   - {fileID: 8243287520268137314}
-  SolderChecker: {fileID: 0}
   canLaunch: 0
 --- !u!114 &9027950953249037236
 MonoBehaviour:

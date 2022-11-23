@@ -1,15 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 
 public class Options : MonoBehaviour
 {
-    [Header("MouseSen")]
-
     public AudioMixer mainMixer;
 
+    public void LoadGameScene()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void ApplyGraphics()
+    {
+       //Screen.fullScreen 
+    }
 
     public void SeTFullScreen(bool isFullscreen)
     {

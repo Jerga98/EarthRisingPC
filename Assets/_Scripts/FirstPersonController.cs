@@ -155,11 +155,11 @@ public class FirstPersonController : MonoBehaviour
 
     private void HandleJump()
     {
-        if (ShouldJump && isCrouching)
-        {
-            moveDirection.y = jumpForce * jumpForceBoost;
-        }
-        else if (ShouldJump)
+        //if (ShouldJump && isCrouching)
+        //{
+        //    moveDirection.y = jumpForce * jumpForceBoost;
+        //}
+        if (ShouldJump)
             moveDirection.y = jumpForce;
     }
 

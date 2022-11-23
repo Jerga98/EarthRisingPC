@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 6062769405157946645}
   - component: {fileID: 3923952202734545017}
   - component: {fileID: 6465521170353832109}
-  - component: {fileID: -9068376008944046576}
   - component: {fileID: 3487483230201974985}
   - component: {fileID: 3943363652570203536}
   - component: {fileID: -3813605604666998475}
+  - component: {fileID: -453880595690287736}
   m_Layer: 0
   m_Name: BP4_Battery01
   m_TagString: BP4_Battery01
@@ -87,20 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &-9068376008944046576
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3537198161780665069}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.3580922
-  m_Height: 0.20830777
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.07584618, z: 0}
 --- !u!54 &3487483230201974985
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -226,3 +212,17 @@ MonoBehaviour:
   minRange: 0
   testAngle: 0
   testRange: 0
+--- !u!64 &-453880595690287736
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3537198161780665069}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6432659201968973077, guid: 7684d955c9825b946892dbb3f33d47f0, type: 3}
