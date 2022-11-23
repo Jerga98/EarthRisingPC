@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using TMPro;
@@ -8,25 +9,30 @@ using Toggle = UnityEngine.UI.Toggle;
 
 public class TabletMechanics : MonoBehaviour
 {
-    [BoxGroup("Printer variables")] [SerializeField]
+    [BoxGroup("Printer variables")]
+    [SerializeField]
     private GameObject printPanel;
 
-    [BoxGroup("Printer variables")] [SerializeField]
+    [BoxGroup("Printer variables")]
+    [SerializeField]
     private Transform parent;
 
-    [BoxGroup("Printer variables")] [SerializeField]
+    [BoxGroup("Printer variables")]
+    [SerializeField]
     private AudioSource microwaveSound;
 
-    [BoxGroup("Printer variables")] [SerializeField]
+    [BoxGroup("Printer variables")]
+    [SerializeField]
     private Animator animator;
 
-    [BoxGroup("Printer variables")] [SerializeField]
+    [BoxGroup("Printer variables")]
+    [SerializeField]
     private float maxTimer;
 
     [BoxGroup("Toggle")] [SerializeField] private GameObject _togglePrefab;
     [BoxGroup("Toggle")] [SerializeField] private ToggleGroup _toggleGroup;
 
-    [BoxGroup("Text")] [SerializeField] public Text debugText;
+    [BoxGroup("Text")] [SerializeField] public TMP_Text debugText;
     [BoxGroup("Text")] [SerializeField] private TMP_Text timerText;
 
     public int instaceID = 0;
@@ -38,10 +44,12 @@ public class TabletMechanics : MonoBehaviour
 
     private Dictionary<Toggle, GameObject> compareObjects;
 
-    [BoxGroup("SO List")][SerializeField]
+    [BoxGroup("SO List")]
+    [SerializeField]
     public List<PrintableItemsSO> _printableItemsSos = new List<PrintableItemsSO>();
 
-    /*[BoxGroup("SO List")]*/ [SerializeField] private PrintableItemsSO _currentlyPrinting;
+    /*[BoxGroup("SO List")]*/
+    [SerializeField] private PrintableItemsSO _currentlyPrinting;
 
 
     private void Start()
@@ -74,7 +82,8 @@ public class TabletMechanics : MonoBehaviour
 
             //itemDescription = _printableItemsSos[i].description;
             tempToggle.graphic.GetComponent<Image>().sprite = _printableItemsSos[i].sprite;
-            tempToggle.GetComponentInChildren<Text>().text = _printableItemsSos[i].name;
+            _printableItemsSos[i].objectName = _printableItemsSos[i].name;
+            tempToggle.GetComponentInChildren<Text>().text = _printableItemsSos[i].objectName;
             //itemDescription = _printableItemsSos[i].description;
             tempToggle.onValueChanged.AddListener(delegate { ToggleValueChanged(); });
             tempToggle.group = _toggleGroup;
@@ -107,7 +116,6 @@ public class TabletMechanics : MonoBehaviour
             //itemDescription = _printableItemsSos[index].description;
             //debugText.text += "\n" + _printableItemsSos[index].name + " is being printed";
             _currentlyPrinting = _printableItemsSos[index];
-            _printableItemsSos[index].instanceID = instaceID + 1;
             printPanel.SetActive(false);
             timerText.gameObject.SetActive(true);
             isTimerActive = true;
@@ -173,8 +181,9 @@ public class TabletMechanics : MonoBehaviour
     [ContextMenu("PrintObjects")]
     private void PrintObjects()
     {
+        ulong @ulong = Convert.ToUInt32(maxTimer);
         animator.SetTrigger("Open");
-        microwaveSound.Play(1);
+        microwaveSound.Play(@ulong);
         Instantiate(_currentlyPrinting.prefab, parent);
     }
 }

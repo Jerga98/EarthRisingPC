@@ -485,12 +485,12 @@ PrefabInstance:
     - target: {fileID: -6480725700853552478, guid: 269ba9af39888014dbe87fa8b21bafd1,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4969966788601555161, guid: 269ba9af39888014dbe87fa8b21bafd1,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 269ba9af39888014dbe87fa8b21bafd1,
         type: 3}

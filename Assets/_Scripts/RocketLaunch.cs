@@ -5,14 +5,12 @@ using Sirenix.OdinInspector;
 
 public class RocketLaunch : MonoBehaviour
 {
+    [SerializeField] private SpaceData _spaceData_SO;
     private Animator animator;
-    //private PreLaunchChecker _preLaunchChecker;
+
     CubeSatCheck cubeSatCheck;
 
     [SerializeField] Renderer rend;
-
-    //[SerializeField] bool canLaunch;
-    public SolderChecker launchable;
 
     private CheckAllChips[] _checkAllChipsArray;
 
@@ -25,21 +23,30 @@ public class RocketLaunch : MonoBehaviour
     [BoxGroup("")] [TitleGroup("/VFX")] [SerializeField]
     GameObject launchFire;
 
+    private MissionList _missionList;
+
+    private void Awake()
+    {
+        cubeSatCheck = FindObjectOfType<CubeSatCheck>();
+        _missionList = FindObjectOfType<MissionList>();
+        animator = GetComponent<Animator>();
+    }
+
     private void Start()
     {
-        animator = GetComponent<Animator>();
         launchFire.SetActive(false);
         foreach (GameObject _gameObject in explosion)
         {
             _gameObject.SetActive(false);
         }
+
         rend.enabled = true;
     }
 
     [ContextMenu("Launch Rocket")]
     public void OnButtonLaunchRocket()
     {
-        if (CubeSatCheck.Launchable == true)
+        if (cubeSatCheck.launchable)
         {
             animator.SetBool("isTakeoff", true);
             foreach (GameObject _gameObject in smoke)
@@ -48,6 +55,7 @@ public class RocketLaunch : MonoBehaviour
             }
 
             launchFire.SetActive(true);
+            _missionList.ResetMission();
             StartCoroutine(nameof(RocketLanding));
         }
         else
@@ -56,37 +64,10 @@ public class RocketLaunch : MonoBehaviour
             {
                 _gameObject.SetActive(true);
             }
+
+            _missionList.ResetMission();
         }
     }
-    
-/*
-    private void PreLaunchInspection()
-    {
-        for (int i = 0; i < _checkAllChipsArray.Length; i++)
-        {
-            //if (launchable.canLaunch)
-            if (_checkAllChipsArray[i].canLaunch)
-            {
-
-                _isLaunchable = true;
-            }
-            else
-            {
-                _isLaunchable = false;
-                foreach (GameObject _gameObject in smoke)
-                {
-                    _gameObject.SetActive(false);
-                }
-
-                foreach (GameObject _gameObject in explosion)
-                {
-                    _gameObject.SetActive(true);
-                }
-                //rend.enabled = false;
-            }
-        }
-    }
-    */
 
     IEnumerator RocketLanding()
     {
@@ -97,14 +78,7 @@ public class RocketLaunch : MonoBehaviour
             _gameObject.SetActive(true);
         }
 
+        cubeSatCheck.launchable = false;
         animator.SetBool("isTakeoff", false);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject)
-        {
-            
-        }
     }
 }

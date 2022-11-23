@@ -15,10 +15,8 @@ public class SolderChecker : MonoBehaviour
         //IsAllSoderComplete();
     }
 
-    public void IsAllSoderComplete()
+    public void IsAllSolderComplete()
     {
-        Debug.Log("poæinje SolderChecker");
-        Debug.Log("SolderChecker radi");
         for (int i = 0; i < contactChangeColors.Length; i++)
         {
             if (contactChangeColors[i].isFinished == false)
@@ -29,8 +27,6 @@ public class SolderChecker : MonoBehaviour
         if (n == 0)
         {
             canLaunch = true;
-            Debug.Log("SolderCh n usporedba je: " + canLaunch);
         }
-        Debug.Log("Solder n: " + n);
     }
 }

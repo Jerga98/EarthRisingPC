@@ -22,7 +22,6 @@ public class AttachPrefabs : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("PowerSupply") && parentObject.gameObject.CompareTag("PowerSupply"))
         {
-            _tabletMechanics.debugText.text = "Tag compered";
 
             if (!collision.transform.GetChild(1).gameObject.activeInHierarchy &&
                 !collision.transform.GetChild(0).gameObject.activeInHierarchy)
@@ -35,7 +34,6 @@ public class AttachPrefabs : MonoBehaviour
                      !collision.transform.GetChild(1).gameObject.activeInHierarchy)
             {
                 collision.transform.GetChild(1).gameObject.SetActive(true);
-                _tabletMechanics.debugText.text = "Child active in hierarchy";
                 //parentObject.transform.GetChild(0).gameObject.SetActive(true);
                 Destroy(prefab);
             }
@@ -217,7 +215,6 @@ public class AttachPrefabs : MonoBehaviour
 
         if (collision.gameObject.CompareTag("NanoPower_BP4_PSU") && parentObject.gameObject.CompareTag("NanoPower_BP4_PSU"))
         {
-            _tabletMechanics.debugText.text = "Tag compered";
 
             if (!collision.transform.GetChild(3).gameObject.activeInHierarchy &&
                 !collision.transform.GetChild(2).gameObject.activeInHierarchy &&
@@ -234,7 +231,6 @@ public class AttachPrefabs : MonoBehaviour
                 !collision.transform.GetChild(3).gameObject.activeInHierarchy)
             {
                 collision.transform.GetChild(1).gameObject.SetActive(true);
-                _tabletMechanics.debugText.text = "Child active in hierarchy";
                 //parentObject.transform.GetChild(0).gameObject.SetActive(true);
                 Destroy(prefab);
             }
@@ -245,7 +241,6 @@ public class AttachPrefabs : MonoBehaviour
                 !collision.transform.GetChild(3).gameObject.activeInHierarchy)
             {
                 collision.transform.GetChild(2).gameObject.SetActive(true);
-                _tabletMechanics.debugText.text = "Child active in hierarchy";
                 //parentObject.transform.GetChild(0).gameObject.SetActive(true);
                 Destroy(prefab);
             }
@@ -256,7 +251,6 @@ public class AttachPrefabs : MonoBehaviour
                 !collision.transform.GetChild(3).gameObject.activeInHierarchy)
             {
                 collision.transform.GetChild(3).gameObject.SetActive(true);
-                _tabletMechanics.debugText.text = "Child active in hierarchy";
                 //parentObject.transform.GetChild(0).gameObject.SetActive(true);
                 Destroy(prefab);
             }
@@ -264,7 +258,7 @@ public class AttachPrefabs : MonoBehaviour
 
         if (collision.gameObject.CompareTag("NanoPower_P31u_PSU") && parentObject.gameObject.CompareTag("NanoPower_P31u_PSU"))
         {
-            _tabletMechanics.debugText.text = "Tag compered";
+            
 
             if (!collision.transform.GetChild(1).gameObject.activeInHierarchy &&
                 !collision.transform.GetChild(0).gameObject.activeInHierarchy)
@@ -277,7 +271,7 @@ public class AttachPrefabs : MonoBehaviour
                      !collision.transform.GetChild(1).gameObject.activeInHierarchy)
             {
                 collision.transform.GetChild(1).gameObject.SetActive(true);
-                _tabletMechanics.debugText.text = "Child active in hierarchy";
+                
                 //parentObject.transform.GetChild(0).gameObject.SetActive(true);
                 Destroy(prefab);
             }

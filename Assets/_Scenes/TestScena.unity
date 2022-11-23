@@ -167,7 +167,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 327e78b97bf84644ab51deffa3162430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  solCamera: {fileID: 1161247204}
   solderingIron: {fileID: 1580637950}
+  visina: 0
 --- !u!1 &996044133
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,7 +395,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1161247201}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

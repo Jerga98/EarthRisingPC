@@ -1,27 +1,30 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CubeSatCheck : MonoBehaviour
 {
-    CheckAllChips allChips;
-    [SerializeField] public static bool Launchable = false;
+    [SerializeField] List<CheckAllChips> _allChips;
+    public bool launchable;
+
     private void OnTriggerEnter(Collider other)
     {
-
-        allChips = FindObjectOfType<CheckAllChips>();
-        Debug.Log("poèinje CUbeSatCheck");
-        allChips.CheckAllComponents();
-        Debug.Log("CUbeSatCheck radi");
+        for (int i = 0; i < _allChips.Count; i++)
+        {
+            _allChips[i].CheckAllComponents();
+        }
 
         if (other.gameObject.CompareTag("CubeSat"))
         {
-            if(other.gameObject.GetComponentInChildren<CheckAllChips>().canLaunch == true)
+            if (other.gameObject.GetComponentInChildren<CheckAllChips>())
             {
-                Launchable = true;
+                launchable = true;
             }
-            
         }
-        Destroy(other);
+
+        Destroy(other.gameObject);
     }
+    
 }

@@ -6,37 +6,34 @@ using UnityEngine;
 public class CheckAllChips : MonoBehaviour
 {
     public SolderChecker[] _solderCheckers;
-    public SolderChecker SolderChecker;
     int n = 0;
     public bool canLaunch;
 
-    private void Update()
+
+    private void Start()
     {
-        //CheckAllComponents();
+        for (int i = 0; i < _solderCheckers.Length; i++)
+        {
+            _solderCheckers[i].IsAllSolderComplete();
+        }
     }
 
     public void CheckAllComponents()
     {
-        //SolderChecker = FindObjectOfType<SolderChecker>();
-        //Debug.Log("poèinje CheckAllChips");
-        //SolderChecker.IsAllSoderComplete();
-        //Debug.Log("CheckAllChips radi");
-
         for (int i = 0; i < _solderCheckers.Length; i++)
         {
-            _solderCheckers[i].IsAllSoderComplete();
-            if (_solderCheckers[i].canLaunch == false)
+            if (!_solderCheckers[i].canLaunch)
             {
-                Debug.Log(_solderCheckers[i].canLaunch);
                 n += 1;
             }
-
         }
+
         if (n == 0)
         {
             canLaunch = true;
-            Debug.Log("ChAllCh n usporedba je: " + canLaunch);
+            Debug.Log("Check ALl chips \n Can Launch " + canLaunch);
         }
-        Debug.Log("Chip n: " + n);
+
+        Debug.Log("Check all chips n " + n);
     }
 }

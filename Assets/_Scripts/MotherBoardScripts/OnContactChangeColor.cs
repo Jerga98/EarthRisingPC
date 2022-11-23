@@ -18,7 +18,6 @@ public class OnContactChangeColor : MonoBehaviour
     private void Start()
     {
         cubeMeshRenderer = GetComponent<MeshRenderer>();
-        Debug.Log(isFinished + " :Start");
     }
 
     private void OnTriggerStay(Collider other)
@@ -40,7 +39,6 @@ public class OnContactChangeColor : MonoBehaviour
                 {
                     colorIndex = 0;
                     isFinished = true;
-                    Debug.Log(isFinished + " :OnTriggerEnter");
                 }
             }
         }
