@@ -13,26 +13,31 @@ public class SolderingSpotPC : MonoBehaviour
     [SerializeField] GameObject solderingCamera;
     [SerializeField] GameObject playerCamera;
     [SerializeField] GameObject SolderPanel;
+    [SerializeField] GameObject spott;
+    [SerializeField] GameObject solderingIron;
     [SerializeField] bool solderingMode = false;
 
     [SerializeField] Transform solderingPos;
 
-    public GameObject spott;
+
+
 
     bool rotating = false;
 
     [SerializeField] float rotationSpeed = 2f;
 
     FirstPersonController firstPerson;
+    Camera solCamera;
 
     private void Awake()
     {
         firstPerson = FindObjectOfType<FirstPersonController>();
+        //camera = GameObject.Find("Main Camera").GetComponent<Camera>();
     }
 
     private void Start()
     {
-
+        solCamera = solderingCamera.GetComponent<Camera>();
     }
 
     private void Update()
@@ -47,7 +52,9 @@ public class SolderingSpotPC : MonoBehaviour
                 solderingMode = true;
                 text.text = solderingText;
                 firstPerson.CanMove = false;
-
+                solderingIron.SetActive(true);
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.Confined;
             }
             else if(solderingMode == true)
             {
@@ -56,6 +63,7 @@ public class SolderingSpotPC : MonoBehaviour
                 solderingMode = false;
                 text.text = notSolderingText;
                 firstPerson.CanMove = true;
+                solderingIron.SetActive(false);
             }
         }
         if (Input.GetKeyDown(KeyCode.A) && solderingMode==true && rotating == false)
@@ -67,6 +75,17 @@ public class SolderingSpotPC : MonoBehaviour
         {
             StartCoroutine(RotateRight());
             //spott.transform.Rotate(Vector3.right * rotationSpeed * Time.deltaTime);
+        }
+
+        if(solderingMode == true)
+        {
+            //Vector3 cursosos = Input.mousePosition;
+            //var mousePos = Input.mousePosition;
+            //mousePos.z = 1.3f; // select distance = 10 units from the camera
+            //Debug.Log(solCamera.ScreenToWorldPoint(mousePos));
+            solderingIron.transform.position = new Vector3(solCamera.ScreenToWorldPoint(Input.mousePosition).x, 1.3f, solCamera.ScreenToWorldPoint(Input.mousePosition).y);
+            //Debug.Log(mousePos.x + " " + mousePos.y);
+            //solderingIron.transform.position = camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
         }
     }
 
