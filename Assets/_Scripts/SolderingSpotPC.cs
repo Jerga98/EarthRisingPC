@@ -105,6 +105,7 @@ public class SolderingSpotPC : MonoBehaviour
         else if (!other.gameObject.CompareTag("GameController") &&
             !other.gameObject.CompareTag("Untagged") && !other.gameObject.CompareTag("MainCamera") && !other.gameObject.CompareTag("solderingIron"))
         {
+            if(spott.transform.childCount == 0) {
             GameObject obj = other.gameObject;
             Debug.Log(obj.name);
             obj.GetComponent<Rigidbody>().useGravity = false;
@@ -118,7 +119,7 @@ public class SolderingSpotPC : MonoBehaviour
             //gameObject.GetComponent<Rigidbody>().useGravity = false;
             //gameObject.transform.localPosition = solderingPos.transform.localPosition;
             //gameObject.transform.rotation = solderingPos.rotation;
-
+            }
         }
     }
 
