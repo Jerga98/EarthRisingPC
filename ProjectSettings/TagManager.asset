@@ -62,6 +62,7 @@ TagManager:
   - UHF Radio_IC004
   - UHF_VHF_IC005
   - UHF_VHF_IC006
+  - NanoPower_P31u_PSU
   layers:
   - Default
   - TransparentFX

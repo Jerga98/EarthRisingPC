@@ -8,6 +8,8 @@ public class PausePC : MonoBehaviour
     public static bool GameIsPaused = false;
 
     public GameObject pausePanel;
+    public GameObject tabletPanel;
+    public GameObject missionPanel;
 
     FirstPersonController firstPerson;
 
@@ -43,6 +45,8 @@ public class PausePC : MonoBehaviour
     }
     public void Pause()
     {
+        tabletPanel.SetActive(false);
+        missionPanel.SetActive(false);
         pausePanel.SetActive(true);
         GameIsPaused = true;
         Time.timeScale = 0f;

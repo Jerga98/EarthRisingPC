@@ -524,6 +524,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  n: 0
   canLaunch: 0
 --- !u!1 &5514387818332485678
 GameObject:
@@ -630,6 +631,7 @@ MonoBehaviour:
   - {fileID: 1182123487230273643}
   - {fileID: 5449457266794780200}
   - {fileID: 2003784342678964133}
+  n: 0
   canLaunch: 0
 --- !u!1 &5625327814631584175
 GameObject:
@@ -744,6 +746,7 @@ MonoBehaviour:
   - {fileID: 3515903097113415921}
   - {fileID: 7009283553454811030}
   - {fileID: 7072703742800972139}
+  n: 0
   canLaunch: 0
 --- !u!1 &5917720750628537717
 GameObject:
@@ -840,8 +843,6 @@ GameObject:
   - component: {fileID: 7593803218665429572}
   - component: {fileID: 5658329290741493390}
   - component: {fileID: 8570083127538244873}
-  - component: {fileID: 3043164849585282725}
-  - component: {fileID: 3784831233878760821}
   - component: {fileID: 7518659372934073425}
   - component: {fileID: 880524877858124775}
   m_Layer: 0
@@ -941,115 +942,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9573215, y: 0.02523911, z: 0.89316267}
   m_Center: {x: -0.0011607409, y: 0.08415049, z: -0.001581341}
---- !u!114 &3043164849585282725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6162772513227673435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 822bc9090447b9c40833509c4a32e597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ignoreMe: 0
-  body: {fileID: 0}
-  hightlightMaterial: {fileID: 0}
-  isGrabbable: 1
-  CopySettings: {fileID: 0}
-  singleHandOnly: 0
-  allowHeldSwapping: 1
-  instantGrab: 0
-  ignoreWeight: 0
-  maintainGrabOffset: 0
-  parentOnGrab: 1
-  throwPower: 1
-  jointBreakForce: 3500
-  showAdvancedSettings: 0
-  handType: 0
-  grabType: 0
-  useGentleGrab: 0
-  makeChildrenGrabbable: 1
-  pullApartBreakOnly: 1
-  customGrabJoint: {fileID: 0}
-  ignoreReleaseTime: 0.5
-  grabPriorityWeight: 1
-  heldPositionOffset: {x: 0, y: 0, z: 0}
-  heldRotationOffset: {x: 0, y: 0, z: 0}
-  jointedBodies: []
-  heldIgnoreColliders: []
-  showEvents: 1
-  onGrab:
-    m_PersistentCalls:
-      m_Calls: []
-  onRelease:
-    m_PersistentCalls:
-      m_Calls: []
-  showAdvancedEvents: 0
-  onSqueeze:
-    m_PersistentCalls:
-      m_Calls: []
-  onUnsqueeze:
-    m_PersistentCalls:
-      m_Calls: []
-  onHighlight:
-    m_PersistentCalls:
-      m_Calls: []
-  onUnhighlight:
-    m_PersistentCalls:
-      m_Calls: []
-  OnJointBreak:
-    m_PersistentCalls:
-      m_Calls: []
-  lockHandOnGrab: 0
---- !u!114 &3784831233878760821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6162772513227673435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c49b27d5a0e0d4dd8ab20e2bed42e835, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ignoreMe: 0
-  poseEnabled: 1
-  poseName: 
-  poseIndex: 0
-  singleHanded: 0
-  showAdvanced: 1
-  positionWeight: 1
-  rotationWeight: 1
-  linkedPoses: []
-  showEditorTools: 1
-  poseScriptable: {fileID: 0}
-  editorHand: {fileID: 0}
-  rightPose:
-    handOffset: {x: 0, y: 0, z: 0}
-    rotationOffset: {x: 0, y: 0, z: 0}
-    localQuaternionOffset: {x: 0, y: 0, z: 0, w: 0}
-    posePositions: []
-    poseRotations: []
-  rightPoseSet: 0
-  leftPose:
-    handOffset: {x: 0, y: 0, z: 0}
-    rotationOffset: {x: 0, y: 0, z: 0}
-    localQuaternionOffset: {x: 0, y: 0, z: 0, w: 0}
-    posePositions: []
-    poseRotations: []
-  leftPoseSet: 0
-  centerObject: {fileID: 0}
-  up: {x: 0, y: 1, z: 0}
-  useInvertPose: 0
-  minAngle: 0
-  maxAngle: 360
-  maxRange: 0
-  minRange: 0
-  testAngle: 0
-  testRange: 0
 --- !u!54 &7518659372934073425
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1277,6 +1169,7 @@ MonoBehaviour:
   - {fileID: 8018458708345447573}
   - {fileID: 6171367378536075563}
   - {fileID: 3169860324509202714}
+  n: 0
   canLaunch: 0
 --- !u!1 &7808819991909362045
 GameObject:
@@ -1383,6 +1276,7 @@ MonoBehaviour:
   - {fileID: 1843238208370273320}
   - {fileID: 547051240671732706}
   - {fileID: 4892224135127939285}
+  n: 0
   canLaunch: 0
 --- !u!1001 &20148100154131767
 PrefabInstance:

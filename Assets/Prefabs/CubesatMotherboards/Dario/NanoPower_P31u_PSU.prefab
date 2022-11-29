@@ -82,6 +82,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NanoPower_P31u_PSU
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d328ccda7d3ac445ac617eb283fd334,
+        type: 3}
+      propertyPath: m_TagString
+      value: NanoPower_P31u_PSU
+      objectReference: {fileID: 0}
     - target: {fileID: 3686865646255224421, guid: 2d328ccda7d3ac445ac617eb283fd334,
         type: 3}
       propertyPath: m_IsActive

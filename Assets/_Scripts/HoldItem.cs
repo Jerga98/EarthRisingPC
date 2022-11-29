@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class HoldItem : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class HoldItem : MonoBehaviour
     public GameObject cubeSatComponent = null;
     public Transform guide;
     public Image krugUI;
+    public TMP_Text itemText;
     Vector3 scale_Normal;
     public MeshCollider componentMeshColl;
     public BoxCollider componentBoxColl;
@@ -120,13 +122,21 @@ public class HoldItem : MonoBehaviour
 
         canHold = true;
         cubeSatComponent = null;
+        itemText.text = " ";
     }
 
     void OnTriggerEnter(Collider col)
     {
         if (!col.gameObject.CompareTag("Untagged") && !col.gameObject.CompareTag("GameController") && !col.gameObject.CompareTag("MainCamera") && canPickup == false)
         {
-            Debug.Log("CAN PICKUP: " + col.gameObject.name);
+            //Debug.Log("CAN PICKUP: " + col.gameObject.name);
+            if (!col.gameObject.CompareTag("GameController") && !col.gameObject.CompareTag("Untagged") && !col.gameObject.CompareTag("MainCamera"))
+            {
+                string nameOfObject = col.gameObject.name.Replace("(Clone)", " ");
+                Debug.Log("IME OBJEKTA: " + nameOfObject);
+                col.gameObject.name = nameOfObject;
+                itemText.text = nameOfObject;
+            }
             canPickup = true;
             cubeSatComponent = col.gameObject;
             //Outline outline = col.gameObject.GetComponent<Outline>();
