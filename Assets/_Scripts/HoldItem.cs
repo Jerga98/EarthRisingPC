@@ -11,7 +11,7 @@ public class HoldItem : MonoBehaviour
     public bool canPickup = false;
     public GameObject cubeSatComponent = null;
     public Transform guide;
-    public Image krugUI;
+    public Image crosshairColor;
     public TMP_Text itemText;
     Vector3 scale_Normal;
     public MeshCollider componentMeshColl;
@@ -123,6 +123,7 @@ public class HoldItem : MonoBehaviour
         canHold = true;
         cubeSatComponent = null;
         itemText.text = " ";
+        crosshairColor.color = Color.white;
     }
 
     void OnTriggerEnter(Collider col)
@@ -132,6 +133,7 @@ public class HoldItem : MonoBehaviour
             //Debug.Log("CAN PICKUP: " + col.gameObject.name);
             if (!col.gameObject.CompareTag("GameController") && !col.gameObject.CompareTag("Untagged") && !col.gameObject.CompareTag("MainCamera"))
             {
+                crosshairColor.color = Color.green;
                 string nameOfObject = col.gameObject.name.Replace("(Clone)", " ");
                 Debug.Log("IME OBJEKTA: " + nameOfObject);
                 col.gameObject.name = nameOfObject;
@@ -153,6 +155,7 @@ public class HoldItem : MonoBehaviour
             if (canHold)
             {
                 canPickup = false;
+                crosshairColor.color = Color.white;
                 //Outline outline = col.gameObject.GetComponent<Outline>();
                 //outline.enabled = false;
             }

@@ -556,24 +556,6 @@ MonoBehaviour:
   - {fileID: 3306240194093064598}
   - {fileID: 21461450972212042}
   canLaunch: 0
---- !u!114 &8516149755412747299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4984962746967508116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!4 &7654083303433243460 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2582683351372788353, guid: 269ba9af39888014dbe87fa8b21bafd1,

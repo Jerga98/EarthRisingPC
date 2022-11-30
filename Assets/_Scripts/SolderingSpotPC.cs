@@ -13,6 +13,7 @@ public class SolderingSpotPC : MonoBehaviour
     [SerializeField] GameObject solderingCamera;
     [SerializeField] GameObject playerCamera;
     [SerializeField] GameObject SolderPanel;
+    [SerializeField] GameObject solderingModePanel;
     [SerializeField] GameObject ingamePanel;
     [SerializeField] GameObject spott;
     [SerializeField] GameObject solderingIron;
@@ -49,6 +50,7 @@ public class SolderingSpotPC : MonoBehaviour
             if(solderingMode == false)
             {
                 ingamePanel.SetActive(false);
+                solderingModePanel.SetActive(true);
                 solderingCamera.SetActive(true);
                 playerCamera.SetActive(false);
                 solderingMode = true;
@@ -61,6 +63,7 @@ public class SolderingSpotPC : MonoBehaviour
             else if(solderingMode == true)
             {
                 ingamePanel.SetActive(true);
+                solderingModePanel.SetActive(false);
                 playerCamera.SetActive(true);
                 solderingCamera.SetActive(false);
                 solderingMode = false;

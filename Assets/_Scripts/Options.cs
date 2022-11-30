@@ -20,7 +20,14 @@ public class Options : MonoBehaviour
 
     public void LoadGameScene()
     {
-        SceneManager.LoadScene(1);
+        if(PlayerPrefs.GetInt("FirstTime") == 0)
+        {
+            SceneManager.LoadScene(1); //uèitaj scenu tutoriala
+        }
+        else
+        {
+            SceneManager.LoadScene(2); //uèitaj scenu ingamea
+        }
     }
 
     public void ApplyGraphics()
