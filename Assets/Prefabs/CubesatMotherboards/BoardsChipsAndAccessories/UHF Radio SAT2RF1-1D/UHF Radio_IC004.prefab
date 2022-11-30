@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -5059795418057891703}
   m_Layer: 0
   m_Name: UHF Radio_IC004
-  m_TagString: ICEPS_IC004
+  m_TagString: UHF Radio_IC004
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
