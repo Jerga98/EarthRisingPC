@@ -81,14 +81,19 @@ public class FirstPersonController : MonoBehaviour
 
     private float rotationX = 0;
 
-    private void OnEnable()
+    //private void OnEnable()
+    //{
+
+    //}
+
+    //private void OnDisable()
+    //{
+
+    //}
+
+    private void Start()
     {
-
-    }
-
-    private void OnDisable()
-    {
-
+        Time.timeScale = 1f;
     }
 
     void Awake()

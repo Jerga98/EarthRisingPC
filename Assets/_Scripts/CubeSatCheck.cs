@@ -8,6 +8,7 @@ public class CubeSatCheck : MonoBehaviour
 {
     [SerializeField] List<CheckAllChips> _allChips;
     public bool launchable;
+    public static bool launchableTutorial;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -21,6 +22,7 @@ public class CubeSatCheck : MonoBehaviour
             if (other.gameObject.GetComponentInChildren<CheckAllChips>())
             {
                 launchable = true;
+                launchableTutorial = true;
             }
         }
 

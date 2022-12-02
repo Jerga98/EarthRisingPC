@@ -11,18 +11,46 @@ public class Tutorial : MonoBehaviour
     bool usedTablet = false;
     bool pickedUpChip = false;
     bool connectedChip = false;
+    bool solder = false;
+    bool connectedWithCSHousing = false;
+    bool passedConveyor = false;
+
     [SerializeField] GameObject guide;
     [SerializeField] GameObject tutorialRadio;
     [SerializeField] GameObject tutorialChip;
+    [SerializeField] GameObject tutorialCubesat;
+    [SerializeField] GameObject tutorialPosition;
+    [SerializeField] GameObject tutorialSides;
+
+    [SerializeField] GameObject tabletPanel;
+    [SerializeField] GameObject missionPanel;
+    [SerializeField] GameObject pausePanel;
+
     [SerializeField] GameObject TutorialPanelMovement;
     [SerializeField] GameObject TutorialPanelTablet;
     [SerializeField] GameObject TutorialPanelPickup;
     [SerializeField] GameObject TutorialPanelConnect;
     [SerializeField] GameObject TutorialPanelSolder;
+    [SerializeField] GameObject TutorialPanelCubesat;
+    [SerializeField] GameObject TutorialPanelCubeSide;
+    [SerializeField] GameObject TutorialPanelLaunch;
+    [SerializeField] GameObject TutorialPanelEnd;
+    [SerializeField] GameObject LaunchPanel;
+
+    //OnContactChangeColor onContact;
+
     // Start is called before the first frame update
     void Start()
     {
         TutorialPanelMovement.SetActive(true);
+        //onContact = FindObjectOfType<OnContactChangeColor>();
+    }
+
+    FirstPersonController firstPerson;
+
+    private void Awake()
+    {
+        firstPerson = FindObjectOfType<FirstPersonController>();
     }
 
     // Update is called once per frame
@@ -33,7 +61,12 @@ public class Tutorial : MonoBehaviour
         TutorialWASDPressing();
         TutorialPickUpChip();
         TutorialConnectChip();
-        TutorialSolderChip();
+        //TutorialSolderChip();
+        TutorialSolderingComplete();
+        //TutorialCubesatComp();
+        TutorialCubesatComp();
+        TutorialConveyorBelt();
+        TutorialLaunch();
     }
 
     void TutorialProgress()
@@ -57,6 +90,24 @@ public class Tutorial : MonoBehaviour
         {
             TutorialPanelSolder.SetActive(true);
             TutorialPanelConnect.SetActive(false);
+        }
+        else if(solder == true)
+        {
+            tutorialCubesat.SetActive(true);
+            TutorialPanelSolder.SetActive(false);
+            TutorialPanelCubesat.SetActive(true);
+        }
+        else if(connectedWithCSHousing == true)
+        {
+            //tutorialSides.SetActive(true);
+            TutorialPanelCubesat.SetActive(false);
+            TutorialPanelCubeSide.SetActive(true);
+        }
+        else if(passedConveyor == true)
+        {
+            Debug.Log("Launch jebeni panel jebote");
+            TutorialPanelCubeSide.SetActive(false);
+            TutorialPanelLaunch.SetActive(true);
         }
 
     }
@@ -99,18 +150,77 @@ public class Tutorial : MonoBehaviour
     }
     void TutorialConnectChip()
     {
-        if (TutorialPanelConnect.activeInHierarchy && guide.transform.childCount == 1)
+        if (TutorialPanelConnect.activeInHierarchy && tutorialChip.activeInHierarchy)
         {
             pickedUpChip = false;
             connectedChip = true;
         }
     }
 
-    void TutorialSolderChip()
+    //void TutorialSolderChip()
+    //{
+    //    if (TutorialPanelSolder.activeInHierarchy && tutorialChip.activeInHierarchy)
+    //    {
+    //        connectedChip = false;
+    //        solder = true;
+    //    }
+    //}
+    void TutorialSolderingComplete()
     {
-        if (TutorialPanelSolder.activeInHierarchy && tutorialChip.activeInHierarchy)
+        if (TutorialPanelSolder.activeInHierarchy && OnContactChangeColor.tutorialIsFinished)
         {
+            connectedChip = false;
+            solder = true;
 
         }
+    }
+
+    void TutorialCubesatComp()
+    {
+        if (TutorialPanelCubesat.activeInHierarchy && tutorialPosition.transform.childCount == 1)
+        {
+            connectedWithCSHousing = true;
+            solder = false;
+        }
+    }
+
+    void TutorialConveyorBelt()
+    {
+        if (TutorialPanelCubeSide.activeInHierarchy && CubeSatCheck.launchableTutorial)
+        {
+            connectedWithCSHousing = false;
+            passedConveyor = true;
+        }
+    }
+
+    void TutorialLaunch()
+    {
+        if (TutorialPanelLaunch.activeInHierarchy && LaunchPanel.activeInHierarchy && Input.GetKeyDown(KeyCode.E))
+        {
+            passedConveyor = false;
+            StartCoroutine(EndTutorial());
+            Debug.Log("završila korutina");
+
+        }
+    }
+
+    IEnumerator EndTutorial()
+    {
+        Debug.Log("krenula korutina");
+        yield return new WaitForSeconds(4f);
+
+        tabletPanel.SetActive(false);
+        missionPanel.SetActive(false);
+        pausePanel.SetActive(false);
+        PausePC.GameIsPaused = true;
+
+        firstPerson.CanMove = false;
+        Cursor.visible = true;
+        PlayerPrefs.SetInt("FirstTime", 1);
+        Cursor.lockState = CursorLockMode.None;
+        TutorialPanelLaunch.SetActive(false);
+        TutorialPanelEnd.SetActive(true);
+        Time.timeScale = 0f;
+        
     }
 }
