@@ -11,6 +11,8 @@ public class HoldItem : MonoBehaviour
     public bool canPickup = false;
     public GameObject cubeSatComponent = null;
     public Transform guide;
+    public Transform guidePos;
+    public Transform shootingPos;
     public Image crosshairColor;
     public TMP_Text itemText;
     Vector3 scale_Normal;
@@ -92,7 +94,7 @@ public class HoldItem : MonoBehaviour
     {
         if (!cubeSatComponent)
             return;
-
+        guide.position = shootingPos.position;
 
         //Aktiviraj gravity
         cubeSatComponent.GetComponent<Rigidbody>().useGravity = true;
@@ -114,7 +116,9 @@ public class HoldItem : MonoBehaviour
         }
 
         //Primjeni velocity kad se baca
+        
         guide.GetChild(0).gameObject.GetComponent<Rigidbody>().velocity = transform.forward * speed;
+        
         //cubeSatComponent.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
         //Uperent smece
         guide.GetChild(0).parent = null;
@@ -124,6 +128,7 @@ public class HoldItem : MonoBehaviour
         cubeSatComponent = null;
         itemText.text = " ";
         crosshairColor.color = Color.white;
+        guide.position = guidePos.position;
     }
 
     void OnTriggerEnter(Collider col)

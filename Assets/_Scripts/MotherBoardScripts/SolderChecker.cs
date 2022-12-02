@@ -12,14 +12,14 @@ public class SolderChecker : MonoBehaviour
 
     private void Update()
     {
-        //IsAllSoderComplete();
+        //IsAllSolderComplete();
     }
 
     public void IsAllSolderComplete()
     {
         for (int i = 0; i < contactChangeColors.Length; i++)
         {
-            if (contactChangeColors[i].isFinished == false)
+            if (contactChangeColors[i].isFinished == true)
             {
                 n += 1;
             }
