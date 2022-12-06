@@ -6,20 +6,20 @@ using UnityEngine;
 public class FirstPersonController : MonoBehaviour
 {
     public bool CanMove { get; set; } = true;
-    private bool ShouldCrouch => Input.GetKeyDown(crouchKey) && !duringCrouchAnimation && characterController.isGrounded;
-    private bool ShouldJump => Input.GetKeyDown(jumpKey) && characterController.isGrounded;
+    private bool ShouldCrouch => Input.GetButton("Crouch") && !duringCrouchAnimation && characterController.isGrounded;
+    private bool ShouldJump => Input.GetButton("Jump") && characterController.isGrounded;
 
     [Header("Functional Options")]
     [SerializeField] private bool canCrouch = true;
     //[SerializeField] private bool canUseHeadbob = true;
     [SerializeField] private bool canJump = true;
-    [SerializeField] private bool canInteract = true;
-    [SerializeField] private bool useFootsteps = true;
+    //[SerializeField] private bool canInteract = true;
+    //[SerializeField] private bool useFootsteps = true;
 
     [Header("Controls")]
-    [SerializeField] private KeyCode crouchKey = KeyCode.LeftControl;
-    [SerializeField] private KeyCode jumpKey = KeyCode.Space;
-    [SerializeField] private KeyCode interactKey = KeyCode.F;
+    //[SerializeField] private KeyCode crouchKey = KeyCode.LeftControl;
+    //[SerializeField] private KeyCode jumpKey = KeyCode.Space;
+    //[SerializeField] private KeyCode interactKey = KeyCode.F;
 
     [Header("Movement Parameters")]
     [SerializeField] private float walkSpeed = 3.0f;
@@ -34,7 +34,7 @@ public class FirstPersonController : MonoBehaviour
     [Header("Jumping Parameters")]
     [SerializeField] private float jumpForce = 8.0f;
     [SerializeField] private float gravity = 30.0f;
-    [SerializeField] private float jumpForceBoost = 1.5f;
+    //[SerializeField] private float jumpForceBoost = 1.5f;
 
     [Header("Crouch Parameters")]
     [SerializeField] private float crouchHeight = 0.5f;
@@ -147,6 +147,7 @@ public class FirstPersonController : MonoBehaviour
         rotationX = Mathf.Clamp(rotationX, -upperLookLimit, lowerLookLimit);
         playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
         transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeedX, 0);
+        //Debug.Log(Input.GetAxis("Mouse X"));
 
         //playerCamera.transform.localRotation = Quaternion.Euler(Input.GetAxis("Mouse Y") * lookSpeedX, Input.GetAxis("Mouse X") * lookSpeedX, 0);
         //transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeedX, 0);

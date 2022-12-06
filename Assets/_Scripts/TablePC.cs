@@ -15,15 +15,16 @@ public class TablePC : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T)){
+        if (Input.GetButtonUp("Tablet")){
             if (!tabletPanel.activeInHierarchy && !pausePanel.activeInHierarchy)
             {
-                Debug.Log("TABLET");
+                
                 tabletPanel.SetActive(true);
                 missionPanel.SetActive(true);
                 firstPerson.CanMove = false;
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
+                Debug.Log("TABLET");
             }
             else if(tabletPanel.activeInHierarchy)
             {
@@ -32,6 +33,7 @@ public class TablePC : MonoBehaviour
                 firstPerson.CanMove = true;
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
+                Debug.Log("TABLET ugašen");
             }
         }
     }

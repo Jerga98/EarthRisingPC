@@ -44,7 +44,7 @@ public class SolderingSpotPC : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && SolderPanel.activeInHierarchy)
+        if (Input.GetButtonUp("Interact") && SolderPanel.activeInHierarchy)
         {
             Debug.Log("Radi E");
             if(solderingMode == false)
@@ -74,12 +74,12 @@ public class SolderingSpotPC : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Locked;
             }
         }
-        if (Input.GetKeyDown(KeyCode.A) && solderingMode==true && rotating == false)
+        if (Input.GetButtonUp("RotateLeft") && solderingMode==true && rotating == false)
         {
             StartCoroutine(RotateLeft());
             //gameObject.transform.Rotate(-Vector3.right * rotationSpeed * Time.deltaTime);
         }
-        if (Input.GetKeyDown(KeyCode.D) && solderingMode == true && rotating == false)
+        if (Input.GetButtonUp("RotateRight") && solderingMode == true && rotating == false)
         {
             StartCoroutine(RotateRight());
             //spott.transform.Rotate(Vector3.right * rotationSpeed * Time.deltaTime);

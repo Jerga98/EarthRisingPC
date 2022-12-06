@@ -27,7 +27,7 @@ public class HoldItem : MonoBehaviour
 
     void InteractWithObj()
     {
-        if (Input.GetMouseButtonUp(0) && canPickup == true)
+        if (Input.GetButtonUp("Fire1") && canPickup == true)
         {
             if (!canHold)
                 throw_drop();

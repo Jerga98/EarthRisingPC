@@ -22,7 +22,7 @@ public class LaunchPC : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && launchPanel.activeInHierarchy)
+        if (Input.GetButtonUp("Interact") && launchPanel.activeInHierarchy)
         {
             Debug.Log("Radi E");
             rocketLaunch.OnButtonLaunchRocket();

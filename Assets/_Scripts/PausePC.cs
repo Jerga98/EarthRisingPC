@@ -20,7 +20,7 @@ public class PausePC : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetButtonUp("Pause"))
         {
             if (GameIsPaused)
             {
