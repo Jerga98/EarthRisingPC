@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class PausePC : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class PausePC : MonoBehaviour
     public GameObject missionPanel;
 
     FirstPersonController firstPerson;
+
+    public GameObject pauseFirstButton;
 
     private void Awake()
     {
@@ -53,6 +56,11 @@ public class PausePC : MonoBehaviour
         firstPerson.CanMove = false;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+
+        //clear selected object
+        EventSystem.current.SetSelectedGameObject(null);
+        //set new sel obj
+        EventSystem.current.SetSelectedGameObject(pauseFirstButton);
     }
 
     public void Options()

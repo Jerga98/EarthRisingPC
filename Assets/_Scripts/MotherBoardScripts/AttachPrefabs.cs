@@ -92,11 +92,11 @@ public class AttachPrefabs : MonoBehaviour
         {
             switch (prefab.gameObject.tag)
             {
-                case "EPS_IC004":
+                case "EPC IC004":
                     collision.transform.GetChild(3).gameObject.SetActive(true);
                     Destroy(prefab);
                     break;
-                case "EPS_IC005":
+                case "EPC IC005":
                     collision.transform.GetChild(4).gameObject.SetActive(true);
                     Destroy(prefab);
                     break;

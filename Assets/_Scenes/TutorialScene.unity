@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 6b5fedef2813b94409fcca82f7aa47cb,
+  m_LightingDataAsset: {fileID: 112000000, guid: 827b34dcacdcf7343a73965eea33a588,
     type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 7834c90b3e527c04986edee91d599791,
     type: 2}
@@ -8839,6 +8839,7 @@ MonoBehaviour:
   pausePanel: {fileID: 897095590}
   tabletPanel: {fileID: 2006365910}
   missionPanel: {fileID: 1386937971}
+  pauseFirstButton: {fileID: 0}
 --- !u!1 &795825842
 GameObject:
   m_ObjectHideFlags: 0
@@ -9616,11 +9617,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canCrouch: 1
   canJump: 1
-  canInteract: 1
-  useFootsteps: 1
-  crouchKey: 306
-  jumpKey: 32
-  interactKey: 102
   walkSpeed: 3
   crouchSpeed: 1
   lookSpeedX: 2
@@ -9629,7 +9625,6 @@ MonoBehaviour:
   lowerLookLimit: 80
   jumpForce: 5
   gravity: 30
-  jumpForceBoost: 1.5
   crouchHeight: 0.7
   standinghHeight: 2
   timeToCrouch: 0.25

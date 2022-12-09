@@ -115,7 +115,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 2408623926607919268}
-  parentObject: {fileID: 0}
+  parentObject: {fileID: 595339024521446156, guid: 521432165deba8a4c9af4d646e3bb2bc,
+    type: 3}
   parent: {fileID: 0}
 --- !u!65 &-482019331382477996
 BoxCollider:

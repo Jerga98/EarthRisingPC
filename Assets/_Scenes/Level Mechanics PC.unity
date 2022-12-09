@@ -3676,7 +3676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 74450126}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &348203720
@@ -8163,6 +8163,7 @@ MonoBehaviour:
   pausePanel: {fileID: 897095590}
   tabletPanel: {fileID: 2006365910}
   missionPanel: {fileID: 1386937971}
+  pauseFirstButton: {fileID: 74450126}
 --- !u!1 &795825842
 GameObject:
   m_ObjectHideFlags: 0
