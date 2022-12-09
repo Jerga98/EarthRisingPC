@@ -10,6 +10,8 @@ public class TimerAdding : MonoBehaviour
     public float timeCount = 0;
     [Header("Do koliko minuta igraè može igrati, ako je limit 0 onda ide u beskonaèno")]
     public int limit;
+    public float timerCounter;
+    private bool isTimerActive;
 
     private void Start()
     {
@@ -18,6 +20,17 @@ public class TimerAdding : MonoBehaviour
 
     private void Update()
     {
+        void Counter()
+        {
+
+            if (timerCounter < 0)
+            {
+                timerCounter = 0;
+                isTimerActive = false;
+            }
+            timerCounter += Time.deltaTime;
+        }
+
         timeCount += Time.deltaTime;
         if (limit == 0)
         {

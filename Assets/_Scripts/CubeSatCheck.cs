@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CubeSatCheck : MonoBehaviour
 {
-    [SerializeField] List<CheckAllChips> _allChips;
+    [SerializeField] public List<CheckAllChips> _allChips;
     public bool launchable;
     public static bool launchableTutorial;
 
