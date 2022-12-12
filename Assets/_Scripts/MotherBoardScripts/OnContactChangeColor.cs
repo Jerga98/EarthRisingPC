@@ -10,6 +10,7 @@ public class OnContactChangeColor : MonoBehaviour
     [SerializeField] private Color[] _colors;
     [SerializeField] [Range(0, 1)] private float lerpTime;
     public static bool tutorialIsFinished;
+    public float numberOfSolders;
 
     private int colorIndex;
     private float time = 0;
@@ -41,6 +42,11 @@ public class OnContactChangeColor : MonoBehaviour
                     colorIndex = 0;
                     isFinished = true;
                     tutorialIsFinished = true;
+                }
+
+                if (isFinished)
+                {
+                    numberOfSolders++;
                 }
             }
         }

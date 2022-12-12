@@ -10,11 +10,6 @@ public class SolderChecker : MonoBehaviour
     public int n = 0;
     public bool canLaunch;
 
-    private void Update()
-    {
-        //IsAllSolderComplete();
-    }
-
     public void IsAllSolderComplete()
     {
         for (int i = 0; i < contactChangeColors.Length; i++)

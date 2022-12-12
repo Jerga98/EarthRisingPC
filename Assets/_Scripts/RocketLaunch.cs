@@ -24,12 +24,15 @@ public class RocketLaunch : MonoBehaviour
     GameObject launchFire;
 
     private MissionList _missionList;
+    private SuccesfullMissionData _succesfullMissionData;
+    private SuccesfullMisionScore _succesfullMisionScore;
 
     private void Awake()
     {
         cubeSatCheck = FindObjectOfType<CubeSatCheck>();
         _missionList = FindObjectOfType<MissionList>();
         animator = GetComponent<Animator>();
+        _succesfullMissionData = FindObjectOfType<SuccesfullMissionData>();
     }
 
     private void Start()
@@ -48,6 +51,7 @@ public class RocketLaunch : MonoBehaviour
     {
         if (cubeSatCheck.launchable)
         {
+            _missionList.ResetMission();
             animator.SetBool("isTakeoff", true);
             foreach (GameObject _gameObject in smoke)
             {
@@ -55,7 +59,7 @@ public class RocketLaunch : MonoBehaviour
             }
 
             launchFire.SetActive(true);
-            _missionList.ResetMission();
+            
             StartCoroutine(nameof(RocketLanding));
         }
         else
@@ -80,5 +84,12 @@ public class RocketLaunch : MonoBehaviour
 
         cubeSatCheck.launchable = false;
         animator.SetBool("isTakeoff", false);
+        _succesfullMissionData.RandomMissionData();
+        Invoke(nameof(GetScore), 2);
+    }
+
+    private void GetScore()
+    {
+        _succesfullMisionScore.MissionScore();
     }
 }

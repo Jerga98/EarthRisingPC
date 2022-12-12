@@ -23,6 +23,7 @@ public class SuccesfullMisionScore : MonoBehaviour
     [SerializeField] private float timeFinished;
 
     public GameObject cubeSat;
+    public GameObject _cubeSatChecker;
 
     private CubeSatComposition _cubeSatComposition;
     private SolderChecker _solderChecker; //Number of solders 
@@ -40,21 +41,24 @@ public class SuccesfullMisionScore : MonoBehaviour
     [ContextMenu("Mission Score")]
     public void MissionScore()
     {
-        var chips = cubeSat.GetComponentInChildren<CheckAllChips>();
-        for (int i = 0; i < chips._solderCheckers.Length; i++)
+        var chips = cubeSat.GetComponentsInChildren<OnContactChangeColor>();
+        for (int i = 0; i < chips.Length; i++)
         {
-            numberOfSolders = i;
-            Debug.Log($"Solders {numberOfSolders}");
+            if (chips[i].isFinished)
+            {
+                numberOfSolders++;
+                Debug.Log($"Mission solders {numberOfSolders}");
+            }
         }
 
 
         // ovaj dio jos ne radi kako treba
         // cilj je da izbroji sve komponente koje u sebi imaju AllChips.cs skriptu
-        var components = _cubeSatCheck._allChips;
-        for (int i = 0; i < components.Count; i++)
-        {
-            numberOfComponents = i;
-        }
+        //var components = _cubeSatCheck._allChips;
+        //for (int i = 0; i < components.Count; i++)
+        //{
+        //    numberOfComponents = i;
+        //}
 
         timeFinished = _timer.timerCounter;
         float seconds = Mathf.FloorToInt(timeFinished % 60);
@@ -62,5 +66,14 @@ public class SuccesfullMisionScore : MonoBehaviour
         score = (numberOfComponents + numberOfSolders) / seconds * 100;
         Debug.Log(
             $"Number of solders {numberOfSolders} \nComponents {numberOfComponents} \nScore {score} \nTime {timeFinished}");
+
+
+        if (cubeSat == null)
+        {
+            numberOfComponents = 0;
+            numberOfSolders = 0;
+            timeFinished = 0;
+            score = 0;
+        }
     }
 }

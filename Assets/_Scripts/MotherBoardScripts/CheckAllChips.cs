@@ -31,9 +31,6 @@ public class CheckAllChips : MonoBehaviour
         if (n == 0)
         {
             canLaunch = true;
-            Debug.Log("Check ALl chips \n Can Launch " + canLaunch);
         }
-
-        Debug.Log("Check all chips n " + n);
     }
 }
